@@ -1,7 +1,9 @@
-# ( baddyCli ) Basic Greper From Files
+# baddyCli
+## An Cli tool build on rust 
 # Usage
 ```sh
 baddyCli <fileName> <word>
+# Currently Just some basic grep for a word
 ```
 # Installtion
 ```sh
