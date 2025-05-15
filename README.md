@@ -5,7 +5,7 @@ baddyCli <fileName> <word>
 ```
 # Installtion
 ```sh
-git clone https://www.github.com/obitoc/baddCli
+git clone https://www.github.com/obitoc/baddyCli
 cd baddyCli
 sh build.sh
 ```
