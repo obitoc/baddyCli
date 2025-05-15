@@ -1,5 +1,5 @@
 // This is the First Project in Rust
-// This code made by for GREPING OUT
+// This code made for Cute ones
 // if you are a baddy dm me @x9639 in telegram
 // Enjoy i guess
 // Importing Env from Standerd library
