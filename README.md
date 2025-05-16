@@ -2,8 +2,12 @@
 ## An Cli tool build on rust 
 # Usage
 ```sh
-baddyCli <fileName> <word>
-# Currently Just some basic grep for a word
+baddyCli -h
+# Help
+baddyCli -grep <fileName> <word>
+# Grep Word from a File
+baddyCli -ai <prompt>
+#AI
 ```
 # Installtion
 ```sh
