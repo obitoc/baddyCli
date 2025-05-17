@@ -8,6 +8,8 @@ baddyCli -grep <fileName> <word>
 # Grep Word from a File
 baddyCli -ai <prompt>
 #AI
+baddyCli -info
+# Device Info
 ```
 # Installtion
 ```sh
