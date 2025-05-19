@@ -1,2 +1,2 @@
-cargo build
-mv ./target/debug/baddyCli $PREFIX/bin/
+cargo build --release
+mv ./target/release/baddyCli $PREFIX/bin/
