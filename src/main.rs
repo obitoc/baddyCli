@@ -5,7 +5,6 @@
 // Importing Env from Standerd library
 use std::env;
 // Importing Some Color
-use colored::{Color,Colorize};
 mod utils;
 use utils::{AiMod,Greper,HelpFunc,Infor};
 enum ParseModes {
