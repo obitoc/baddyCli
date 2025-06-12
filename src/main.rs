@@ -6,14 +6,14 @@
 use std::env;
 // Importing Some Color
 mod utils;
-use utils::{AiMod,Greper,HelpFunc,Infor};
+use utils::{ai_mod,greper,helpfunc,inform};
 enum ParseModes {
     AiMode,
     HelpMode,
     GreperMode,
     InfoMode,
 }
-fn ParseMode(input: &str) -> ParseModes {
+fn parse_mode(input: &str) -> ParseModes {
     match input {
         "-ai" => ParseModes::AiMode,
         "-h" => ParseModes::HelpMode,
@@ -30,19 +30,19 @@ fn main() {
        eprintln!("Usage: baddyCli <mode>\n\nGreper:\nbaddyCli -grep <fileName> <word>\nAi:\nbaddyCli -ai <prompt>\nInfo About device :\nbaddyCli -info\nHelp:\nbaddyCli -h\nLove U.");
        std::process::exit(1);
    }
-   let TypeOf: ParseModes = ParseMode(&args[1]);
-   match TypeOf {
+   let type_of: ParseModes = parse_mode(&args[1]);
+   match type_of {
        ParseModes::HelpMode => {
-           HelpFunc();
+           helpfunc();
        },
        ParseModes::GreperMode => {
-           Greper(&args);
+           greper(&args);
        },
        ParseModes::AiMode => {
-           AiMod(&args);
+           ai_mod(&args);
        },
        ParseModes::InfoMode => {
-           Infor();
+           inform();
 
        }
    }

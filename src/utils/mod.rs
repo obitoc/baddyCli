@@ -5,7 +5,7 @@ use reqwest::header;
 use serde_json::{json,Value};
 use std::fs;
 use colored::{Color,Colorize};
-pub fn Greper(args: &Vec<String>) {
+pub fn greper(args: &[String]) {
 
    // If The lovley user dont provide the needed Arguments
 
@@ -15,37 +15,41 @@ pub fn Greper(args: &Vec<String>) {
        std::process::exit(1);
    }
    let word = &args[3];
-   let fileName = &args[2];
+   let file_name = &args[2];
    // Get Content Off The File
 
-   let Content = fs::read_to_string(fileName).expect("FuckOff");
+   let content = fs::read_to_string(file_name).expect("FuckOff");
    // For loop for Each Line
-   for (lineNum,line) in Content.lines().enumerate() {
+   for (line_num,line) in content.lines().enumerate() {
        // Seeing if the word of yours in the Line ( btw you look cute )
        if line.contains(word) {
            // Do you support Femboys ?
 
-           println!("{} >  {}",lineNum.to_string().truecolor(150,95,255),line.replace(&args[3],&args[3].color(Color::BrightCyan).to_string()).bold());
+           println!("{} >  {}",line_num.to_string().truecolor(150,95,255),line.replace(&args[3],&args[3].color(Color::BrightCyan).to_string()).bold());
        }
    }
    // Printing Cute msg
    println!("Done. Love you babe");
 }
 
-pub fn HelpFunc(){
+pub fn helpfunc(){
     println!("Usage: baddyCli <mode>\n\nGreper:\nbaddyCli -grep <fileName> <word>\nAi:\nbaddyCli -ai <prompt>\nDevice inf:\nbaddyCli -info\nHelp:\nbaddyCli -h\nLove U.");
 }
-pub fn AiMod(args: &Vec<String>) {
-    // New Client
-    let cli = Client::new();
-    // New Headers Map
-    let mut Headers = header::HeaderMap::new();
+pub fn ai_mod(args: &[String]) {
+
     // Checking Some cute stuff
    if args.len() < 3 {
 
        eprintln!("Usage: baddyCli -ai <prompt>\nLove U.");
        std::process::exit(1);
    }
+
+    // New Client
+    let cli = Client::new();
+    // New Headers Map
+    let mut headers = header::HeaderMap::new();
+
+
    // Some Headers
    let heades = [
        ("authority","www.blackbox.ai"),
@@ -57,9 +61,9 @@ pub fn AiMod(args: &Vec<String>) {
    ];
    // For loop and appending to Headers Map
    for (key,value) in heades {
-       let headName = header::HeaderName::from_bytes(key.as_bytes()).unwrap();
-       let headVal = header::HeaderValue::from_str(value).unwrap();
-       Headers.insert(headName,headVal);
+       let headname = header::HeaderName::from_bytes(key.as_bytes()).unwrap();
+       let headval = header::HeaderValue::from_str(value).unwrap();
+       headers.insert(headname,headval);
 
    }
    // Json Data
@@ -121,13 +125,10 @@ pub fn AiMod(args: &Vec<String>) {
 
    });
    // fetching Out
-  let res = cli.post("https://www.blackbox.ai/api/chat").headers(Headers).json(&json_data).timeout(std::time::Duration::from_secs(80)).send().expect("idk A nigger. ");
+  let res = cli.post("https://www.blackbox.ai/api/chat").headers(headers).json(&json_data).timeout(std::time::Duration::from_secs(80)).send().expect("idk A nigger. ");
   println!("{}",res.text().unwrap());
 }
-pub fn Infor(){
-    // Makes an mut sys var
-    let mut sys = System::new_all();
-    sys.refresh_all();
+pub fn inform(){
     //  Cute Formating
     let formated = format!("
 
