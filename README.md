@@ -1,7 +1,7 @@
 # baddyCli
 ## An Cli tool build on rust
 ----------
-# Usage
+## :star: Usage
 ```sh
 baddyCli -h
 # Help
@@ -13,7 +13,7 @@ baddyCli -info
 # Device Info
 ```
 ----------
-# Installtion
+## :roket: Installtion
 ```sh
 gh repo clone obitoc/baddyCli
 # or
