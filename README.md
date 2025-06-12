@@ -13,7 +13,7 @@ baddyCli -info
 # Device Info
 ```
 ----------
-## :roket: Installtion
+## :rocket: Installtion
 ```sh
 gh repo clone obitoc/baddyCli
 # or
