@@ -1,7 +1,5 @@
-<div>
-    <h1>baddyCli</h1>
-    <strong> An Cli tool build on rust </strong>
-</div>
+# baddyCli
+## An Cli tool build on rust
 ----------
 # Usage
 ```sh
